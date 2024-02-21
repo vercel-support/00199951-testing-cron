@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/eigenPoints",
-      "schedule": "*/5 * * * *"
+      "schedule": "*/1 * * * *"
     }
   ]
 }
