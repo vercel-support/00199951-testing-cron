@@ -10,15 +10,21 @@ export default function Home() {
   useEffect(() => {
     const fetchPoints = async () => {
       try {
-        const data = await axios.get('/api/eigenPoints')
-        console.log('data from GET Request', data)
-        setPoints(data?.data?.eigenLayerPointsApi)
+        const data = await axios.get('/api/globalStats')
+        console.log('data from GET Request', data?.data?.globalStats?.eigenPoints)
+        if (data?.data?.globalStats?.eigenPoints) {
+          setPoints(data?.data?.globalStats?.eigenPoints)
+        }
       } catch (error) {
         console.log(error)
       }
     }
     fetchPoints()
   }, [])
+
+  // useEffect(() => {
+  //   console.log('points', points)
+  // }, [points])
 
 
   return (
